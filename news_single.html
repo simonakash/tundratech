@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Page Title -->
+		<title>Single News - Pacific NonProfit Bootstrap Responsive  Donation Premium Template on Themeforest </title>
+		<!-- Company Icon -->
+		<link rel="icon" href="images/logo.png">
+		<!----------->
+		<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet">
+		
+		<!-- Tailwind-Css -->
+		<link rel="stylesheet" href="css/tailwind.min.css">
+		<style>
+			body{
+				font-family: 'Lato';
+			}
+			.max-w-container{
+				width: 1170px;
+			}
+			.bg-gray-transparent{
+				background-color: rgba(0,0,0,0.7);
+			}
+			@media (min-width: 1280px){
+				.container{
+				width: 1280px !important;
+				}
+			}
+			header ul li{
+				position: relative;
+			}
+			header ul li a:after{
+				content: "";
+				height: 2px;
+				width: 0px;
+				left: 0;
+				bottom: -2px;
+				position: absolute;
+				background: white;
+				transition-duration: .4s;
+			}
+			header ul li a:hover::after,header ul li a:focus::after,header ul li a:active::after,header .active::after{
+				width: 100% !important;
+			}
+		</style>
+	</head>
+	<body x-data="{sticky: true}">
+		<!-- ==Header Section == -->
+		<header
+		@scroll.window="sticky= (window.pageYOffset > 150) ? false :true"
+		:class="{'bg-gray-transparent duration-400 sticky py-2' : !sticky, 'py-8 border-b' : sticky}"
+		class="absolute right-0 top-0 left-0 z-50 border-gray-500">
+			<div class="lg:container lg:px-0 sm:px-10 px-5 mx-auto relative"  x-data="{humberger: false}">
+				<!-----Mobile menu------->
+				<nav class="z-50 absolute top-20 left-0 right-0 overflow-hidden" x-show="humberger"
+				x-transition:enter="duration-700 ease-in-out"
+				x-transition:enter-start="h-0"
+				x-transition:enter-end="h-screen"
+				x-transition:leave="duration-700 ease-in-out"
+				x-transition:leave-start="h-screen"
+				x-transition:leave-end="h-0"
+				>
+					<div>
+						<ul class="uppercase font-semibold text-white tracking-wide">
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="index.html">Home</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="events.html">Events</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="events_single.html">Events Single</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="news.html">News</a></li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="news_single.html">Single</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="donations.html">Gallery</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="donations_steps.html">Steps</a>
+							</li>
+							<li class=" p-4 py-2 bg-gray-800 w-full text-center">
+								<a class="block py-1 border-2 border-red-500 leading-loose bg-red-500 text-white hover:bg-transparent hover:text-red-500 duration-300" href="donations_single.html">Donation</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<!-----main menu------->
+				<nav class="flex border-gray-700 justify-between items-center text-center text-white">
+					<!--logo--->
+					<div>
+						<a  href="index.html"><img class="md:w-auto w-32" src="images/logo.png" alt="//"></a>
+					</div>
+					<!----->
+					<div class="lg:block hidden" x-data=" {active :'active1'}">
+						<ul class="flex items-center xl:space-x-8 space-x-4 xl:text-base text-sm uppercase font-semibold text-white tracking-wide">
+							<li>
+								<a class=" block" href="index.html">Home</a>
+							</li>
+							<li>
+								<a class=" block" href="events.html">Events</a>
+							</li>
+							<li>
+								<a class=" block" href="news.html">News</a></li>
+							<li>
+								<a class=" block" href="donations.html">Gallery</a>
+							</li>
+							<li>
+								<a class=" block" href="donations_steps.html">Steps</a>
+							</li>
+							<!----------->
+							<li x-data="{dropdown:false}" @mouseover="dropdown=true" @mouseout="dropdown=false" class="relative"@click.away="dropdown=false">
+								<button class="flex items-center font-bold text-sm uppercase">More
+									<span>
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-3" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+										</svg>
+									</span> 
+								</button>
+								<div x-show="dropdown"
+								x-transition:enter="duration-300 ease-in-out"
+								x-transition:enter-start="opacity-0 transform translate-y-12"
+								x-transition:enter-end="opacity-100 transform translate-y-0"
+								x-transition:leave="duration-300 ease-in-out"
+								x-transition:leave-start="opacity-100 transform translate-y-0"
+								x-transition:leave-end="opacity-0 transform translate-y-12"
+								class="absolute -left-10 top-8 bg-white border w-52 rounded shadow text-sm text-black overflow-hidden font-normal z-50 text-left">
+									<a class=" block hover:bg-gray-100  px-4 p-3 border-b" href="news_single.html">Single</a>
+									<a class=" block hover:bg-gray-100  px-4 p-3 border-b" href="events_single.html">Events Single</a>
+								</div> 
+							</li>
+							<!---button---->
+							<ol>
+								<a class="py-1 px-7 block border-2 border-red-500 leading-loose bg-red-500 text-white hover:bg-transparent hover:text-red-500 duration-300" href="donations_single.html">Donation</a>
+							</ol>
+						</ul>
+					</div>
+					<!-----MHumburger menu button----->
+					<button @click.prevent="humberger = !humberger" class=" focus:outline-none border rounded p-2 lg:hidden block">
+						<span x-show="humberger === false">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</span>
+						<span x-show="humberger === true">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</span>
+					</button>
+				</nav>
+			</div>
+		</header>
+		<!-- ==Main Section == -->
+		<main>
+			<!-----=====Sec 001=======----->
+			<section>
+				<div class="w-full  bg-cover flex items-end relative" style="background-image: url(images/bg/header.jpg);min-height:330px;">
+					<h1 class="lg:text-7xl md:text-5xl text-4xl lg:container lg:px-0 sm:px-10 px-5 lg:mx-auto tracking-wide font-light text-white py-12" >Our News</h1>
+				</div>
+			</section>
+			<!-----=====Sec 002=======----->
+			<section class=" py-8 lg:container lg:px-0 sm:px-10 px-5 mx-auto">
+				<div class=" grid lg:grid-cols-3 grid-cols-1 md:gap-8 gap-5">
+					<!----->
+					<div class=" col-span-2">
+						<article class="text-sm leading-loose text-gray-500">
+							<!-------->
+							<div>
+								<!------>
+								<h2 class=" text-2xl text-gray-500 my-4">Writing letters to newspapers is extremely helpul.</h2>
+								<!------>
+								<figure>
+									<img class=" w-full mx-auto" src="images/news/main.jpg" alt="//">
+								</figure>
+								<!------>
+								<p class="text-sm text-gray-400 mt-3 mb-4">03 April 2014 | Author Peter Smithson | Category: News</p>
+								<!------>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eos quasi distinctio impedit, voluptatum explicabo! Sequi minima ad magni hic tempora nisi iure quidem provident voluptatum et maiores consequuntur esse sit beatae exercitationem consequatur pariatur deleniti harum omnis a, nobis aspernatur non fugiat voluptatibus! Perferendis facilis quae neque consequatur, ratione deleniti alias cupiditate repellendus illo libero perspiciatis nobis minima doloremque incidunt rem dolorum! Dolorum animi, ipsa quae libero, ad commodi, molestias consectetur tempora veniam sed necessitatibus aspernatur perferendis! Dolor possimus culpa obcaecati in doloribus saepe earum a eius.</p>
+								<!------>
+								<blockquote class=" bg-green-50 bg-opacity-80 md:p-8 p-4 my-5 border-l-4 border-gray-800 flex items-center">
+									<div class=" md:flex hidden items-center text-2xl bg-gray-800 rounded-full text-white mr-4 p-5">
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="quote-right" class="h-5 w-5" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"/></svg>
+										</span>
+									</div>
+									<p class="italic text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequatur officiis nobis illo dicta recusandae voluptatum corporis, dolores!</p>
+								</blockquote>
+								<!------>
+								<p class=" mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium provident consequatur, nisi in <a class=" underline text-blue-400 hover:text-gray-800 duration-300 hover:no-underline" href="#">architecto fugiat animi aspernatur</a>. Velit similique quod dolore temporibus qui fugiat expedita aperiam, odit, consectetur ea assumenda voluptatum obcaecati facere perferendis! Eveniet recusandae eligendi, consectetur deleniti architecto amet, mollitia praesentium! Minima et, dignissimos doloribus debitis molestias sapiente! Ut natus, magni mollitia est, non delectus error architecto inventore.</p>
+								
+								<!------>
+								<p>Item list here:</p>
+									
+								<!------>
+								<ul class=" list-disc md:list-inside md:pl-0 pl-6">
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, iste.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, iste.</li>
+									<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, iste.</li>
+								</ul>
+							</div>
+							<!-------->
+							<div class=" mt-20">
+								<!-- author section---->
+								<div class=" border-l-4 border-gray-800">
+									<div class=" md:flex block md:text-left text-center items-center p-5 py-10 border border-l-0">
+										<img class="rounded-full mx-auto w-28 md:mr-5" src="images/people/author.jpg" alt="//">
+										<div>
+											<h5 class=" text-xl mb-2 my-4 md:my-0">Administrator</h5>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eum dicta eligendi, iste repellendus aspernatur iusto, ut commodi maxime quam laudantium repellat perspiciatis mollitia sapiente nulla rerum, praesentium ducimus laboriosam. </p>
+										</div>
+									</div>
+								</div>
+								<!-- comment section---->
+								<!------>
+								<div class=" mt-20">
+									<h1 class=" text-2xl">4 Comments</h1>
+								</div>
+								<div class=" divide-y text-gray-500 text-sm">
+									<!------>
+									<div>
+										<div class=" md:flex block items-center pt-10 md:p-6 pb-6">
+											<img class="rounded-full w-28 hidden md:block mr-5" src="images/people/author.jpg" alt="//">
+											<div>
+												<div class=" flex items-center justify-between">
+													<img class="rounded-full w-14 md:hidden block mr-5" src="images/people/author.jpg" alt="//">
+													<h5 class=" text-xl mb-2 hidden md:inline-block">Administrator</h5>
+													<div class=" flex items-center text-sm">
+														<p class=" text-gray-400">1 day ago |</p>
+														<a class="mx-1 text-gray-500 hover:text-gray-400" href="#">Report</a> | <a class="mx-1 text-gray-500 hover:text-gray-400" href="#">Reply</a>
+													</div>
+												</div>
+												<!------->
+												<div>
+													<h5 class=" text-xl mb-2 md:hidden">Administrator</h5>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eum dicta eligendi, iste repellendus aspernatur iusto, ut commodi maxime quam laudantium repellat perspiciatis mollitia sapiente nulla rerum, praesentium ducimus laboriosam. </p>
+												</div>
+											</div>
+										</div>
+										<!------>
+										<div class="lg:ml-20 sm:ml-10 ml-8 md:flex block items-center pt-10 md:p-6 pb-6">
+											<img class="rounded-full w-28 hidden md:block mr-5" src="images/people/author.jpg" alt="//">
+											<div>
+												<div class=" flex items-center justify-between">
+													<img class="rounded-full w-14 md:hidden block mr-5" src="images/people/author.jpg" alt="//">
+													<h5 class=" text-xl mb-2 hidden md:inline-block">Administrator</h5>
+													<div class=" flex items-center text-sm">
+														<p class=" text-gray-400">1 day ago |</p>
+														<a class="mx-1 text-gray-500 hover:text-gray-400" href="#">Report</a> | <a class="mx-1 text-gray-500 hover:text-gray-400" href="#">Reply</a>
+													</div>
+												</div>
+												<!------->
+												<div>
+													<h5 class=" text-xl mb-2 md:hidden">Administrator</h5>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eum dicta eligendi, iste repellendus aspernatur iusto, ut commodi maxime quam laudantium repellat perspiciatis mollitia sapiente nulla rerum, praesentium ducimus laboriosam. </p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!------>
+									<div class=" md:flex block items-center pt-10 md:p-6 pb-6">
+											<img class="rounded-full w-28 hidden md:block mr-5" src="images/people/author.jpg" alt="//">
+											<div>
+												<div class=" flex items-center justify-between">
+													<img class="rounded-full w-14 md:hidden block mr-5" src="images/people/author.jpg" alt="//">
+													<h5 class=" text-xl mb-2 hidden md:inline-block">Administrator</h5>
+													<div class=" flex items-center text-sm">
+														<p class=" text-gray-400">1 day ago |</p>
+														<a class="mx-1 text-gray-500 hover:text-gray-400" href="#">Report</a> | <a class="mx-1 text-gray-500 hover:text-gray-400" href="#">Reply</a>
+													</div>
+												</div>
+												<!------->
+												<div>
+													<h5 class=" text-xl mb-2 md:hidden">Administrator</h5>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eum dicta eligendi, iste repellendus aspernatur iusto, ut commodi maxime quam laudantium repellat perspiciatis mollitia sapiente nulla rerum, praesentium ducimus laboriosam. </p>
+												</div>
+											</div>
+									</div>
+									<!------>
+									<div class=" md:flex block items-center pt-10 md:p-6 pb-6">
+										<img class="rounded-full w-28 hidden md:block mr-5" src="images/people/author.jpg" alt="//">
+										<div>
+											<div class=" flex items-center justify-between">
+												<img class="rounded-full w-14 md:hidden block mr-5" src="images/people/author.jpg" alt="//">
+												<h5 class=" text-xl mb-2 hidden md:inline-block">Administrator</h5>
+												<div class=" flex items-center text-sm">
+													<p class=" text-gray-400">1 day ago |</p>
+													<a class="mx-1 text-gray-500 hover:text-gray-400" href="#">Report</a> | <a class="mx-1 text-gray-500 hover:text-gray-400" href="#">Reply</a>
+												</div>
+											</div>
+											<!------->
+											<div>
+												<h5 class=" text-xl mb-2 md:hidden">Administrator</h5>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eum dicta eligendi, iste repellendus aspernatur iusto, ut commodi maxime quam laudantium repellat perspiciatis mollitia sapiente nulla rerum, praesentium ducimus laboriosam. </p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!----Pagination---->
+							<div class="my-16 inline-flex items-center divide-x rounded border">
+								<button class="py-2 duration-200 rounded-l flex items-center justify-center focus:outline-none hover:bg-green-400 hover:text-white px-4">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+									  </svg>
+								</button>
+								<button class="py-2 duration-200 focus:outline-none hover:bg-green-400 hover:text-white px-4">1</button>
+								<button class="py-2 duration-200 focus:outline-none hover:bg-green-400 hover:text-white px-4">2</button>
+								<button class="py-2 duration-200 focus:outline-none hover:bg-green-400 hover:text-white px-4">3</button>
+								<button class="py-2 duration-200 focus:outline-none hover:bg-green-400 hover:text-white px-4">4</button>
+								<button class="py-2 duration-200 rounded-r focus:outline-none hover:bg-green-400 hover:text-white px-4">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+									  </svg>
+								</button>
+							</div>
+							<!----Leave comment---->
+							<form action="#">
+								<h3 class="text-black font-medium text-2xl">Leave a Comment</h3>
+								<div class=" grid lg:grid-cols-2 grid-cols-1 gap-8 mt-2">
+									<!------->
+									<div>
+										<!---name---->
+										<div class="mb-4 relative">
+											<input type="text" class="p-2 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow" id="comment-name" placeholder="Your Name" />
+											<span class=" absolute right-3 top-4 text-gray-400 bg-white">
+												<svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4" viewBox="0 0 512 512"><path fill="currentColor" d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"/></svg>
+											</span>
+										</div>
+										<!---email---->
+										<div class="mb-4 relative">
+											<input type="email" class="p-2 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow" placeholder="Email" />
+											<span class=" absolute right-3 top-4 text-gray-400 bg-white">
+												<svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+											</span>
+										</div>
+										<!---website---->
+										<div class="mb-4 relative">
+											<input type="text" class="p-2 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow" placeholder="Website" />
+											<span class=" absolute right-3 top-4 text-gray-400 bg-white">
+												<svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>
+											</span>
+										</div>
+									</div>
+									<!------->
+									<div class="mb-4 ">
+										<textarea class="h-full resize-none p-2 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow"  placeholder="Comment"></textarea>
+										<!------submit------->
+										<div class=" flex justify-end">
+											<button class="focus:outline-none bg-gray-300 text-white p-1 px-6 font-medium rounded duration-300 hover:bg-green-400 ">Add Comment</button>
+										</div>
+									</div>
+								</div>
+							</form>
+							<!------->
+							<div class=" flex items-center justify-between mt-40 text-gray-400 hover:text-gray-500 border-t pt-2">
+								<a href="#" class=" flex items-center">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+									</svg>
+									<span>Previous</span>
+								</a>
+								<a href="#" class=" flex items-center">
+									<span>Next</span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+									</svg>
+								</a>
+							</div>
+						</article>
+					</div>
+					<!----->
+					<div class=" my-4">
+						<!---Search---->
+						<div class=" relative">
+							<input type="text" class="p-3 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow" placeholder="Search" />
+							<span class=" absolute right-3 top-4 text-gray-400 bg-white">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+								  </svg>
+							</span>
+						</div>
+						<!---Tag---->
+						<div class=" mt-14">
+							<h4 class=" my-2 text-gray-500 text-2xl">Tags</h4>
+							<ul class="grid lg:grid-cols-2 sm:grid-cols-3 grid-cols-2 md:gap-x-16 gap-6 text-center">
+								<!----->
+								<li class=" group relative">
+									
+									<!---->
+									<a class=" p-3 rounded-l bg-white bg-gray-200 text-gray-500 hover:text-white group-hover:bg-green-400 flex items-center duration-300 text-sm" href="#">
+										<!---->
+										<div class=" h-3 w-3 rounded-full bg-white mr-2"></div>
+										<!---->
+										<span class="z-10">Animal Care</span>
+										<!---->
+										<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-gray-200 group-hover:bg-green-400 duration-300"></div>
+									</a>
+									<!---->
+								</li>
+								<!----->
+								<li class=" group relative">
+									
+									<!---->
+									<a class=" p-3 rounded-l bg-white bg-gray-200 text-gray-500 hover:text-white group-hover:bg-green-400 flex items-center duration-300 text-sm" href="#">
+										<!---->
+										<div class=" h-3 w-3 rounded-full bg-white mr-2"></div>
+										<!---->
+										<span class="z-10">Green Pace</span>
+										<!---->
+										<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-gray-200 group-hover:bg-green-400 duration-300"></div>
+									</a>
+									<!---->
+								</li>
+								<!----->
+								<li class=" group relative">
+									
+									<!---->
+									<a class=" p-3 rounded-l bg-white bg-gray-200 text-gray-500 hover:text-white group-hover:bg-green-400 flex items-center duration-300 text-sm" href="#">
+										<!---->
+										<div class=" h-3 w-3 rounded-full bg-white mr-2"></div>
+										<!---->
+										<span class="z-10">Love</span>
+										<!---->
+										<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-gray-200 group-hover:bg-green-400 duration-300"></div>
+									</a>
+									<!---->
+								</li>
+								<!----->
+								<li class=" group relative">
+									
+									<!---->
+									<a class=" p-3 rounded-l bg-white bg-gray-200 text-gray-500 hover:text-white group-hover:bg-green-400 flex items-center duration-300 text-sm" href="#">
+										<!---->
+										<div class=" h-3 w-3 rounded-full bg-white mr-2"></div>
+										<!---->
+										<span class="z-10">Pacific Coast</span>
+										<!---->
+										<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-gray-200 group-hover:bg-green-400 duration-300"></div>
+									</a>
+									<!---->
+								</li>
+								<!----->
+								<li class=" group relative">
+									
+									<!---->
+									<a class=" p-3 rounded-l bg-white bg-gray-200 text-gray-500 hover:text-white group-hover:bg-green-400 flex items-center duration-300 text-sm" href="#">
+										<!---->
+										<div class=" h-3 w-3 rounded-full bg-white mr-2"></div>
+										<!---->
+										<span class="z-10">River</span>
+										<!---->
+										<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-gray-200 group-hover:bg-green-400 duration-300"></div>
+									</a>
+									<!---->
+								</li>
+								<!----->
+								<li class=" group relative">
+									
+									<!---->
+									<a class=" p-3 rounded-l bg-white bg-gray-200 text-gray-500 hover:text-white group-hover:bg-green-400 flex items-center duration-300 text-sm" href="#">
+										<!---->
+										<div class=" h-3 w-3 rounded-full bg-white mr-2"></div>
+										<!---->
+										<span class="z-10">Scientist</span>
+										<!---->
+										<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-gray-200 group-hover:bg-green-400 duration-300"></div>
+									</a>
+									<!---->
+								</li>
+							</ul>
+						</div>
+						<!---Categories---->
+						<div class=" mt-14">
+							<h4 class=" my-2 text-gray-500 text-2xl">Categories</h4>
+							<div >
+								<!------->
+								<a class="py-2 border-b flex items-center justify-between w-full text-gray-500 hover:text-gray-400 duration-300" href="#">
+									<span class=" flex items-center">
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+											  </svg>
+										</span>
+										<span>Wildlife</span>
+									</span>
+									<span>(32)</span>
+								</a>
+								<!------->
+								<a class="py-2 border-b flex items-center justify-between w-full text-gray-500 hover:text-gray-400 duration-300" href="#">
+									<span class=" flex items-center">
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+											  </svg>
+										</span>
+										<span>Conservation</span>
+									</span>
+									<span>(45)</span>
+								</a>
+								<!------->
+								<a class="py-2 border-b flex items-center justify-between w-full text-gray-500 hover:text-gray-400 duration-300" href="#">
+									<span class=" flex items-center">
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+											  </svg>
+										</span>
+										<span>Eviromental</span>
+									</span>
+									<span>(15)</span>
+								</a>
+								<!------->
+								<a class="py-2 border-b flex items-center justify-between w-full text-gray-500 hover:text-gray-400 duration-300" href="#">
+									<span class=" flex items-center">
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+											  </svg>
+										</span>
+										<span>Volunteer</span>
+									</span>
+									<span>(76)</span>
+								</a>
+								<!------->
+								<a class="py-2 border-b flex items-center justify-between w-full text-gray-500 hover:text-gray-400 duration-300" href="#">
+									<span class=" flex items-center">
+										<span>
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+											  </svg>
+										</span>
+										<span>Donate</span>
+									</span>
+									<span>(43)</span>
+								</a>
+							</div>
+						</div>
+						<!---Video---->
+						<div class=" mt-14">
+							<h4 class=" my-2 text-gray-500 text-2xl">Video</h4>
+							<div class=" border p-2 bg-white w-full border-gray-500">
+								<iframe class="w-full h-60" src="https://www.youtube.com/embed/ripzqRWjrRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						</div>
+						<!---Social Media---->
+						<div  class=" mt-14">
+							<h4 class=" my-2 text-gray-500 text-2xl">Social Media</h4>
+							<!---->
+							<div x-data="{hover:false}" @mouseover="hover=true" @mouseout="hover=false" :class="{'-translate-x-2' : hover === true}" class="group transform duration-500 xl:w-4/5 mb-2">
+								<a class="rounded-l bg-blue-500 text-white flex items-center duration-300 tracking-widest uppercase text-sm relative" href="#">
+									<!---->
+									<div class="p-4 mr-2 bg-blue-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4" role="img" viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+									</div>
+									<!---->
+									<span class="z-10">Follow us on Facebook</span>
+									<!---->
+									<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-blue-500"></div>
+								</a>
+							</div>
+							<!---->
+							<div x-data="{hover:false}" @mouseover="hover=true" @mouseout="hover=false" :class="{'-translate-x-2' : hover === true}" class="group transform duration-500 xl:w-4/5 mb-2">
+								<a class="rounded-l bg-blue-400 text-white flex items-center duration-300 tracking-widest uppercase text-sm relative" href="#">
+									<!---->
+									<div class="p-4 mr-2 bg-blue-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4" role="img" viewBox="0 0 320 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+									</div>
+									<!---->
+									<span class="z-10">Follow us on Twitter</span>
+									<!---->
+									<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-blue-400"></div>
+								</a>
+							</div>
+							<!---->
+							<div x-data="{hover:false}" @mouseover="hover=true" @mouseout="hover=false" :class="{'-translate-x-2' : hover === true}" class="group transform duration-500 xl:w-4/5 mb-2">
+								<a class="rounded-l bg-red-500 text-white flex items-center duration-300 tracking-widest uppercase text-sm relative" href="#">
+									<!---->
+									<div class="p-4 mr-2 bg-red-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4" role="img" viewBox="0 0 320 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z"/></svg>
+									</div>
+									<!---->
+									<span class="z-10">Follow us on GPlus</span>
+									<!---->
+									<div class=" absolute -right-4 h-8 w-8 transform rotate-45 bg-red-500"></div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- ==Footer Section == -->
+		<footer>
+			<div class=" py-7  bg-gray-900 text-gray-300 mt-16">
+				<div class=" lg:container lg:px-0 sm:px-10 px-5 mx-auto md:flex md:justify-between justify-center md:text-left text-center">
+					<p class="copy">Copyright 2016 &copy; Powered By MustacheThemes.</p>
+					<p class="address">The Best Nonprofit Bootstrap Theme</p>
+				</div>
+			</div>
+		</footer>
+
+		<!--  Alpine Js -->
+		<script src="js/alpine.min.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+

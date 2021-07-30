@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Page Title -->
+		<title>Our News - Pacific NonProfit Bootstrap Responsive Donation Premium Template on Themeforest </title>
+		<!-- Company Icon -->
+		<link rel="icon" href="images/logo.png">
+		<!----------->
+		<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet">
+		<!-------->
+		<!-- Tailwind-Css -->
+		<link rel="stylesheet" href="css/tailwind.min.css">
+		<!--Css -->
+		<link rel="stylesheet" href="css/styles.css">
+
+		<style>
+			body{
+				font-family: 'Lato';
+			}
+			.max-w-container{
+				width: 1170px;
+			}
+			.bg-gray-transparent{
+				background-color: rgba(0,0,0,0.7);
+			}
+			.leading-10{
+				line-height: 1.5em !important;
+			}
+			.shadow-green-500:hover,.shadow-green-500:focus{
+				box-shadow: 0 0 10px #10B981 !important;
+			}
+			header ul li{
+				position: relative;
+			}
+			header ul li a:after{
+				content: "";
+				height: 2px;
+				width: 0px;
+				left: 0;
+				bottom: -2px;
+				position: absolute;
+				background: white;
+				transition-duration: .4s;
+			}
+			header ul li a:hover::after,header ul li a:focus::after,header ul li a:active::after,header .active::after{
+				width: 100% !important;
+			}
+			.group:hover .group-hover\:top-0{
+				top: 0;
+			}
+		</style>
+	</head>
+	<body x-data="{sticky: true}">
+		<!-- ==Header Section == -->
+		<header
+		@scroll.window="sticky= (window.pageYOffset > 150) ? false :true"
+		:class="{'bg-gray-transparent duration-400 sticky py-2' : !sticky, 'py-8 border-b' : sticky}"
+		class="absolute right-0 top-0 left-0 z-50 border-gray-500">
+			<div class="xl:container 2xl:px-0 md:px-20 sm:px-10 px-4 mx-auto relative"  x-data="{humberger: false}">
+				<!-----Mobile menu------->
+				<nav class="z-50 absolute top-20 left-0 right-0 overflow-hidden" x-show="humberger"
+				x-transition:enter="duration-700 ease-in-out"
+				x-transition:enter-start="h-0"
+				x-transition:enter-end="h-screen"
+				x-transition:leave="duration-700 ease-in-out"
+				x-transition:leave-start="h-screen"
+				x-transition:leave-end="h-0"
+				>
+					<div>
+						<ul class="uppercase font-semibold text-white tracking-wide">
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="index.html">Home</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="events.html">Events</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="events_single.html">Events Single</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="news.html">News</a></li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="news_single.html">Single</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="donations.html">Gallery</a>
+							</li>
+							<li class=" p-4 border-b bg-gray-800 hover:bg-gray-600 text-white">
+								<a class="block" href="donations_steps.html">Steps</a>
+							</li>
+							<li class=" p-4 py-2 bg-gray-800 w-full text-center">
+								<a class="block py-1 border-2 border-red-500 leading-loose bg-red-500 text-white hover:bg-transparent hover:text-red-500 duration-300" href="donations_single.html">Donation</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<!-----main menu------->
+				<nav class="flex border-gray-700 justify-between items-center text-center text-white">
+					<!--logo--->
+					<div>
+						<a  href="index.html"><img class="md:w-auto w-32" src="images/logo.png" alt="//"></a>
+					</div>
+					<!----->
+					<div class="lg:block hidden" x-data=" {active :'active1'}">
+						<ul class="flex items-center xl:space-x-8 space-x-4 xl:text-base text-sm uppercase font-semibold text-white tracking-wide">
+							<li>
+								<a class=" block" href="index.html">Home</a>
+							</li>
+							<li>
+								<a class=" block" href="events.html">Events</a>
+							</li>
+							<li>
+								<a class=" block" href="news.html">News</a></li>
+							<li>
+								<a class=" block" href="donations.html">Gallery</a>
+							</li>
+							<li>
+								<a class=" block" href="donations_steps.html">Steps</a>
+							</li>
+							<!----------->
+							<li x-data="{dropdown:false}" @mouseover="dropdown=true" @mouseout="dropdown=false" class="relative"@click.away="dropdown=false">
+								<button class="flex items-center font-bold text-sm uppercase">More
+									<span>
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-3" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+										</svg>
+									</span> 
+								</button>
+								<div x-show="dropdown"
+								x-transition:enter="duration-300 ease-in-out"
+								x-transition:enter-start="opacity-0 transform translate-y-12"
+								x-transition:enter-end="opacity-100 transform translate-y-0"
+								x-transition:leave="duration-300 ease-in-out"
+								x-transition:leave-start="opacity-100 transform translate-y-0"
+								x-transition:leave-end="opacity-0 transform translate-y-12"
+								class="absolute -left-10 top-8 bg-white border w-52 rounded shadow text-sm text-black overflow-hidden font-normal z-50 text-left">
+									<a class=" block hover:bg-gray-100  px-4 p-3 border-b" href="news_single.html">Single</a>
+									<a class=" block hover:bg-gray-100  px-4 p-3 border-b" href="events_single.html">Events Single</a>
+								</div> 
+							</li>
+							<!---button---->
+							<ol>
+								<a class="py-1 px-7 block border-2 border-red-500 leading-loose bg-red-500 text-white hover:bg-transparent hover:text-red-500 duration-300" href="donations_single.html">Donation</a>
+							</ol>
+						</ul>
+					</div>
+					<!-----Humburger menu button----->
+					<button @click.prevent="humberger = !humberger" class=" focus:outline-none border rounded p-2 lg:hidden block">
+						<span x-show="humberger === false">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</span>
+						<span x-show="humberger === true">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</span>
+					</button>
+				</nav>
+			</div>
+		</header>
+		<!-- ==Main Section == -->
+		<main>
+			<!-----=====slider 001=======----->
+			<section>
+				<div class="flex items-center justify-center text-white bg-cover bg-no-repeat " style=" background-image: url(images/slider/slide01.jpg);">
+					<div class="md:w-3/4 lg:px-0 sm:px-10 px-5 text-center md:mt-10 mt-20 md:py-40 py-20 ">
+						<h1 class=" xl:text-6xl md:text-3xl text-2xl uppercase tracking-wide font-light leading-10">Amazing & Incredible Renewale Energy Projects that we totally Love</h1>
+						<!---button----->
+						<div class=" xl:mt-20 md:mt-16 mt-10">
+							<a class="xl:p-5 md:p-4 p-3 xl:text-2xl text-xl font-bold px-8 border-4 hover:border-red-500 border-gray-900 leading-loose bg-gray-900 text-white hover:bg-transparent hover:text-red-500 duration-300" href="donations_single.html">Take action now</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-----=====about 002=======----->
+			<section class=" xl:px-28 lg:px-24 md:px-20 sm:px-10 px-4 py-20">
+				<div class="xl:container mx-auto ">
+					<!----hero text---->
+					<div class=" text-center text-gray-400 uppercase">
+						<h1 class=" text-5xl md:text-8xl font-thin ">ABOUT US</h1>
+						<p class="text-xl tracking-wide font-light mt-4">RENEWABLE ENERGY PROJECTS THAT WE LOVE.</p>
+						<p class="lg:w-4/5 text-gray-500 my-10 lg:px-20 mx-auto normal-case tracking-wide leading-loose">Pacific is an independent campaigning organisation, which uses non-violent, creative confrontation to expose global environmental problems, and to force the solutions which are essential to a green and peaceful future. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ipsum ex deleniti molestiae nulla sequi molestias sit quia, possimus perferendis quasi dolor nesciunt culpa magnam quaerat ipsa eaque nostrum? Maiores.</p>
+					</div>
+					<!----tab---->
+					<div class=" mt-10" x-data="{tab : 'tab1'}">
+						<!---button----->
+						<div class=" md:flex justify-center">
+							<div class="md:inline-flex text-gray-400 border rounded-sm md:divide-x divide-y">
+								<!--------->
+								<button @click.prevent="tab = 'tab1'" :class="{'bg-green-300 text-white' : tab === 'tab1'}" class="focus:outline-none uppercase p-4 px-7 text-sm hover:text-white hover:bg-green-300 duration-300 font-medium block w-full">Volunteering</button>
+								<!--------->
+								<button @click.prevent="tab = 'tab2'" :class="{'bg-green-300 text-white' : tab === 'tab2'}" class="focus:outline-none uppercase p-4 px-7 text-sm hover:text-white hover:bg-green-300 duration-300 font-medium block w-full">Mission</button>
+								<!--------->
+								<button @click.prevent="tab = 'tab3'" :class="{'bg-green-300 text-white' : tab === 'tab3'}" class="focus:outline-none uppercase p-4 px-7 text-sm hover:text-white hover:bg-green-300 duration-300 font-medium block w-full">Vission</button>
+								<!--------->
+								<button @click.prevent="tab = 'tab4'" :class="{'bg-green-300 text-white' : tab === 'tab4'}" class="focus:outline-none uppercase p-4 px-7 text-sm hover:text-white hover:bg-green-300 duration-300 font-medium block w-full">Sponsors</button>
+							</div>
+						</div>
+						<!---content----->
+						<div class=" mt-10">
+							<!----tab1------->
+							<div x-show="tab === 'tab1'" class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 ">
+								<!-- 001--->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-green-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+										</span>
+									</div>
+									<!----->
+									<div class=" mt-5 text-gray-500 text-center">
+										<h4 class="uppercase text-xl mb-2">RECEIVE REPORT</h4>
+										<p>What matters isn’t words, but actions: The environment has to benefit.</p>
+									</div>
+								</div>
+								<!-- 002--->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-purple-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>
+										</span>
+									</div>
+									<!----->
+									<div class=" mt-5 text-gray-500 text-center">
+										<h4 class="uppercase text-xl mb-2">WE CARE ABOUT YOU</h4>
+										<p>What matters isn’t words, but actions: The environment has to benefit.</p>
+									</div>
+								</div>
+								<!-- 003-->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-yellow-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 7.1 5.8 12 12 12 2.4 0 4.9-.7 7.1-2.4L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm16 352c0 8.8-7.2 16-16 16H288l-12.8 9.6L208 428v-60H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h384c8.8 0 16 7.2 16 16v288z"/></svg>
+										</span>
+									</div>
+									<!----->
+									<div class=" mt-5 text-gray-500 text-center">
+										<h4 class="uppercase text-xl mb-2">SUPPORT COMMUNITY</h4>
+										<p>What matters isn’t words, but actions: The environment has to benefit.</p>
+									</div>
+								</div>
+								<!-- 004-->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-red-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/></svg>
+										</span>
+									</div>
+									<!----->
+									<div class=" mt-5 text-gray-500 text-center">
+										<h4 class="uppercase text-xl mb-2">SHARE YOUR PASSION</h4>
+										<p>What matters isn’t words, but actions: The environment has to benefit.</p>
+									</div>
+								</div>
+							</div>
+							<!----tab2------->
+							<div x-show="tab === 'tab2'" class="flex justify-center">
+								<!----->
+								<div>
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-purple-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>
+										</span>
+									</div>
+								</div>
+								<!----->
+								<div class="md:ml-14 text-gray-500 lg:w-3/5">
+									<h4 class="uppercase text-2xl mb-2">PROMOTING SOLUTIONS</h4>
+									<p class="text-gray-400">We seek solutions for, and promote open, informed debate about society's environmental choices. We don’t work to manage environmental problems, we work to eliminate them. That’s why we developed our roadmap to save the seas through the establishment of marine reserves, and an Energy [R]evolution blueprint that points the way to a clean economy. It’s not enough for us to point the finger; we develop, research and promote concrete steps towards a green and peaceful future for all of us.</p>
+								</div>
+							</div>
+							<!----tab3------->
+							<div x-show="tab === 'tab3'" class="flex justify-center">
+								<!----->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-yellow-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 7.1 5.8 12 12 12 2.4 0 4.9-.7 7.1-2.4L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm16 352c0 8.8-7.2 16-16 16H288l-12.8 9.6L208 428v-60H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h384c8.8 0 16 7.2 16 16v288z"/></svg>
+										</span>
+									</div>
+								</div>
+								<!----->
+								<div class="md:ml-14 text-gray-500 lg:w-3/5">
+									<h4 class="uppercase text-2xl mb-2">PERSONAL RESPONSIBILITY AND NONVIOLENCE</h4>
+									<p class="text-gray-400">We take personal responsibility for our actions, and we are committed to nonviolence. These principles are inspired by the Quaker concept of 'bearing witness', which is about taking action based on conscience – personal action based on personal responsibility. We are accountable for our actions, and everyone on a Greenpeace action is trained in nonviolent direct action.</p>
+								</div>
+							</div>
+							<!----tab4------->
+							<div x-show="tab === 'tab4'" class="grid grid-cols-4 gap-8 ">
+								<!-- 003-->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-yellow-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 7.1 5.8 12 12 12 2.4 0 4.9-.7 7.1-2.4L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm16 352c0 8.8-7.2 16-16 16H288l-12.8 9.6L208 428v-60H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h384c8.8 0 16 7.2 16 16v288z"/></svg>
+										</span>
+									</div>
+									<!----->
+									<div class=" mt-5 text-gray-500 text-center">
+										<h4 class="uppercase text-xl mb-2">RECEIVE REPORT</h4>
+										<p>What matters isn’t words, but actions: The environment has to benefit.</p>
+									</div>
+								</div>
+								<!-- 002--->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-purple-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>
+										</span>
+									</div>
+									<!----->
+									<div class=" mt-5 text-gray-500 text-center">
+										<h4 class="uppercase text-xl mb-2">RECEIVE REPORT</h4>
+										<p>What matters isn’t words, but actions: The environment has to benefit.</p>
+									</div>
+								</div>
+								<!-- 001--->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-green-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+										</span>
+									</div>
+									<!----->
+									<div class=" mt-5 text-gray-500 text-center">
+										<h4 class="uppercase text-xl mb-2">RECEIVE REPORT</h4>
+										<p>What matters isn’t words, but actions: The environment has to benefit.</p>
+									</div>
+								</div>
+								<!-- 004-->
+								<div>
+									<!----->
+									<div class="flex items-center justify-center w-36 h-36 rounded-full bg-gray-200 mx-auto">
+										<span class="bg-red-500 h-32 w-32 rounded-full text-white flex items-center justify-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 " role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"/></svg>
+										</span>
+									</div>
+									<!----->
+									<div class=" mt-5 text-gray-500 text-center">
+										<h4 class="uppercase text-xl mb-2">RECEIVE REPORT</h4>
+										<p>What matters isn’t words, but actions: The environment has to benefit.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-----=====donate 003=======----->
+			<section class="xl:px-28 lg:px-24 md:px-20 sm:px-10 px-4 py-20 bg-cover bg-no-repeat" style="background-image: url(images/bg/donate-now.jpg);">
+				<div class="xl:container mx-auto ">
+					<!----hero text---->
+					<div class=" text-center text-white uppercase">
+						<h1 class=" text-5xl md:text-8xl font-thin ">DONATE NOW</h1>
+						<p class="text-xl tracking-wide font-light mt-4">MOST URGENT CAUSES.</p>
+					</div>
+					<!-------->
+					<div class=" grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 my-10">
+						<!---001--->
+						<a href="#" class=" bg-white border hover:border-green-500 duration-300 shadow-green-500">
+							<img class=" w-full" src="images/donations/donation01.jpg" alt="//">
+							<!----->
+							<div class="p-4 border-b">
+								<h4 class="text-xl text-gray-500">My Artic Sunrice</h4>
+								<p class=" text-sm text-gray-400 my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in molestiae ex...</p>
+							</div>
+							<!----->
+							<div class="p-4">
+								<!----->
+								<div class=" flex items-center justify-between text-sm text-gray-400">
+									<span>Grossed</span>
+									<span>Goal: $4,548</span>
+								</div>
+								<!----->
+								<div x-data="{popover:false}" @mouseover="popover=true" @mouseout="popover=false" class="my-2 h-6 w-full rounded-lg bg-gray-100 border relative">
+									<div class="rounded-l-lg h-full w-11/12 bg-green-600"></div>
+									<div x-show="popover">
+										<div  class="absolute -top-8 right-24 bg-red-500 text-xs text-white rounded-md p-1 px-3 z-10">
+											<span>$2200</span>
+										</div>
+										<div class="absolute -top-4 right-28 mr-3 bg-red-500 h-3 w-3 transform rotate-45"></div>
+									</div>
+								</div>
+								<!----->
+								<div class=" flex items-center justify-between text-sm text-gray-400 mt-4">
+									<!----->
+									<div class="flex items-center">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" role="img" viewBox="0 0 448 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg> 
+										<span>2 min</span>
+									</div>
+									<!----->
+									<div class=" flex items-center">
+										<div class="flex items-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3  mr-1" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg> 
+											<span>432</span>
+										</div>
+										<div class="flex items-center ml-4">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3  mr-1" role="img" viewBox="0 0 448 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"/></svg> 
+											<span>957</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<!---002--->
+						<a href="#" class=" bg-white border hover:border-green-500 duration-300 shadow-green-500">
+							<img class=" w-full" src="images/donations/donation02.jpg" alt="//">
+							<!----->
+							<div class="p-4 border-b">
+								<h4 class="text-xl text-gray-500">My Artic Sunrice</h4>
+								<p class=" text-sm text-gray-400 my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in molestiae ex...</p>
+							</div>
+							<!----->
+							<div class="p-4">
+								<!----->
+								<div class=" flex items-center justify-between text-sm text-gray-400">
+									<span>Grossed</span>
+									<span>Goal: $4,548</span>
+								</div>
+								<!----->
+								<div x-data="{popover:false}" @mouseover="popover=true" @mouseout="popover=false" class="my-2 h-6 w-full rounded-lg bg-gray-100 border relative">
+									<div class="rounded-l-lg h-full w-3/5 bg-green-600"></div>
+									<div x-show="popover">
+										<div  class="absolute -top-8 right-24 bg-red-500 text-xs text-white rounded-md p-1 px-3 z-10">
+											<span>$2200</span>
+										</div>
+										<div class="absolute -top-4 right-28 mr-3 bg-red-500 h-3 w-3 transform rotate-45"></div>
+									</div>
+								</div>
+								<!----->
+								<div class=" flex items-center justify-between text-sm text-gray-400 mt-4">
+									<!----->
+									<div class="flex items-center">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" role="img" viewBox="0 0 448 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg> 
+										<span>2 min</span>
+									</div>
+									<!----->
+									<div class=" flex items-center">
+										<div class="flex items-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3  mr-1" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg> 
+											<span>432</span>
+										</div>
+										<div class="flex items-center ml-4">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3  mr-1" role="img" viewBox="0 0 448 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"/></svg> 
+											<span>957</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<!---003--->
+						<a href="#" class=" bg-white border hover:border-green-500 duration-300 shadow-green-500">
+							<img class=" w-full" src="images/donations/donation03.jpg" alt="//">
+							<!----->
+							<div class="p-4 border-b">
+								<h4 class="text-xl text-gray-500">My Artic Sunrice</h4>
+								<p class=" text-sm text-gray-400 my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in molestiae ex...</p>
+							</div>
+							<!----->
+							<div class="p-4">
+								<!----->
+								<div class=" flex items-center justify-between text-sm text-gray-400">
+									<span>Grossed</span>
+									<span>Goal: $4,548</span>
+								</div>
+								<!----->
+								<div x-data="{popover:false}" @mouseover="popover=true" @mouseout="popover=false" class="my-2 h-6 w-full rounded-lg bg-gray-100 border relative">
+									<div class="rounded-l-lg h-full w-4/5 bg-green-600"></div>
+									<div x-show="popover">
+										<div  class="absolute -top-8 right-24 bg-red-500 text-xs text-white rounded-md p-1 px-3 z-10">
+											<span>$2200</span>
+										</div>
+										<div class="absolute -top-4 right-28 mr-3 bg-red-500 h-3 w-3 transform rotate-45"></div>
+									</div>
+								</div>
+								<!----->
+								<div class=" flex items-center justify-between text-sm text-gray-400 mt-4">
+									<!----->
+									<div class="flex items-center">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" role="img" viewBox="0 0 448 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg> 
+										<span>2 min</span>
+									</div>
+									<!----->
+									<div class=" flex items-center">
+										<div class="flex items-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3  mr-1" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg> 
+											<span>432</span>
+										</div>
+										<div class="flex items-center ml-4">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3  mr-1" role="img" viewBox="0 0 448 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"/></svg> 
+											<span>957</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<!---004--->
+						<a href="#" class=" bg-white border hover:border-green-500 duration-300 shadow-green-500">
+							<img class=" w-full" src="images/donations/donation04.jpg" alt="//">
+							<!----->
+							<div class="p-4 border-b">
+								<h4 class="text-xl text-gray-500">My Artic Sunrice</h4>
+								<p class=" text-sm text-gray-400 my-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in molestiae ex...</p>
+							</div>
+							<!----->
+							<div class="p-4">
+								<!----->
+								<div class=" flex items-center justify-between text-sm text-gray-400">
+									<span>Grossed</span>
+									<span>Goal: $4,548</span>
+								</div>
+								<!----->
+								<div x-data="{popover:false}" @mouseover="popover=true" @mouseout="popover=false" class="my-2 h-6 w-full rounded-lg bg-gray-100 border relative">
+									<div class="rounded-l-lg h-full w-3/4 bg-green-600"></div>
+									<div x-show="popover">
+										<div  class="absolute -top-8 right-24 bg-red-500 text-xs text-white rounded-md p-1 px-3 z-10">
+											<span>$2200</span>
+										</div>
+										<div class="absolute -top-4 right-28 mr-3 bg-red-500 h-3 w-3 transform rotate-45"></div>
+									</div>
+								</div>
+								<!----->
+								<div class=" flex items-center justify-between text-sm text-gray-400 mt-4">
+									<!----->
+									<div class="flex items-center">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" role="img" viewBox="0 0 448 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg> 
+										<span>2 min</span>
+									</div>
+									<!----->
+									<div class=" flex items-center">
+										<div class="flex items-center">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3  mr-1" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg> 
+											<span>432</span>
+										</div>
+										<div class="flex items-center ml-4">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3  mr-1" role="img" viewBox="0 0 448 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"/></svg> 
+											<span>957</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<!---button----->
+					<div class="py-10 flex justify-center">
+						<a class="p-2 px-12 font-bold px-8 border-4 hover:border-red-500 border-gray-900 leading-loose bg-gray-900 text-white hover:bg-transparent hover:text-red-500 duration-300" href="donations_single.html">View All</a>
+					</div>
+				</div>
+			</section>
+			<!-----=====gallary 004=======----->
+			<section class=" xl:px-28 lg:px-24 md:px-20 sm:px-10 px-4 py-20 bg-green-500 relative">
+				<div class="xl:container mx-auto ">
+					<!----hero text---->
+					<div class=" text-center text-white uppercase">
+						<h1 class=" text-5xl md:text-8xl font-thin ">GALLERY</h1>
+						<p class="text-xl tracking-wide font-light mt-4">RENEWABLE ENERGY PROJECTS THAT WE LOVE.</p>
+					</div>
+					<!----content---->
+					<div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-10 py-10">
+						<!------>
+						<div x-data="{modal:false}" @click.prevent="modal=true" class="relative overflow-hidden group cursor-pointer">
+							<img src="images/gallery/gallery01.jpg" alt="//">
+							<div class="group-hover:opacity-100 group-hover:top-0 bg-gray-900 bg-opacity-70 h-full left-0 opacity-0 p-3 absolute top-full duration-200 w-full">
+								<div class="border-double border-4 px-10 block uppercase text-center text-white font-semibold h-full w-full flex items-center justify-center">
+									<h4 >Bountiful Oceans</>
+								</div>
+							</div>
+							<!------>
+							<!--------modal---------->
+							<div x-show.transition="modal"
+							class="z-20 w-1/2 overflow-hidden fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+								<div class="p-3 rounded bg-white relative mt-10"=>
+									<!--------close button---------->
+									<button @click="modal=false" class="z-50 absolute text-white -top-2 -right-2">
+										<span class=" bg-black p-1 border-2 flex justify-center items-center rounded-full">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+										</svg>
+										</span>
+									</button>
+									<!--------content ---------->
+									<div  @click.away="modal=false">
+										<img class="w-full" src="images/gallery/gallery01.jpg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!------>
+						<div x-data="{modal:false}" @click.prevent="modal=true" class="relative overflow-hidden group cursor-pointer">
+							<img src="images/gallery/gallery02.jpg" alt="//">
+							<div class="group-hover:opacity-100 group-hover:top-0 bg-gray-900 bg-opacity-70 h-full left-0 opacity-0 p-3 absolute top-full duration-200 w-full">
+								<div class="border-double border-4 px-10 block uppercase text-center text-white font-semibold h-full w-full flex items-center justify-center">
+									<h4 >Bountiful Oceans</>
+								</div>
+							</div>
+							<!------>
+							<!--------modal---------->
+							<div x-show.transition="modal"
+							class="z-20 w-1/2 overflow-hidden fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+								<div class="p-3 rounded bg-white relative mt-10">
+									<!--------close button---------->
+									<button @click="modal=false" class="z-50 absolute text-white -top-2 -right-2">
+										<span class=" bg-black p-1 border-2 flex justify-center items-center rounded-full">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+										</svg>
+										</span>
+									</button>
+									<!--------content ---------->
+									<div @click.away="modal=false">
+										<img class="w-full" src="images/gallery/gallery02.jpg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!------>
+						<div x-data="{modal:false}" @click.prevent="modal=true" class="relative overflow-hidden group cursor-pointer">
+							<img src="images/gallery/gallery03.jpg" alt="//">
+							<div class="group-hover:opacity-100 group-hover:top-0 bg-gray-900 bg-opacity-70 h-full left-0 opacity-0 p-3 absolute top-full duration-200 w-full">
+								<div class="border-double border-4 px-10 block uppercase text-center text-white font-semibold h-full w-full flex items-center justify-center">
+									<h4 >Bountiful Oceans</>
+								</div>
+							</div>
+							<!------>
+							<!--------modal---------->
+							<div x-show.transition="modal"
+							class="z-20 w-1/2 overflow-hidden fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+								<div class="p-3 rounded bg-white relative mt-10">
+									<!--------close button---------->
+									<button @click="modal=false" class="z-50 absolute text-white -top-2 -right-2">
+										<span class=" bg-black p-1 border-2 flex justify-center items-center rounded-full">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+										</svg>
+										</span>
+									</button>
+									<!--------content ---------->
+									<div  @click.away="modal=false">
+										<img class="w-full" src="images/gallery/gallery03.jpg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!------>
+						<div x-data="{modal:false}" @click.prevent="modal=true" class="relative overflow-hidden group cursor-pointer">
+							<img src="images/gallery/gallery04.jpg" alt="//">
+							<div class="group-hover:opacity-100 group-hover:top-0 bg-gray-900 bg-opacity-70 h-full left-0 opacity-0 p-3 absolute top-full duration-200 w-full">
+								<div class="border-double border-4 px-10 block uppercase text-center text-white font-semibold h-full w-full flex items-center justify-center">
+									<h4 >Bountiful Oceans</>
+								</div>
+							</div>
+							<!------>
+							<!--------modal---------->
+							<div x-show.transition="modal"
+							class="z-20 w-1/2 overflow-hidden fixed left-0 top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+								<div class="p-3 rounded bg-white relative mt-10">
+									<!--------close button---------->
+									<button @click="modal=false" class="z-50 absolute text-white -top-2 -right-2">
+										<span class=" bg-black p-1 border-2 flex justify-center items-center rounded-full">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+										</svg>
+										</span>
+									</button>
+									<!--------content ---------->
+									<div @click.away="modal=false">
+										<img class="w-full" src="images/gallery/gallery04.jpg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!------->
+				<div class="absolute flex justify-center left-0 right-0 -bottom-8">
+					<div class=" w-16 h-16 bg-green-500 transform rotate-45"></div>
+				</div>
+			</section>
+			<!-----=====CONTACT 005=======----->
+			<section class=" xl:px-28 lg:px-24 md:px-20 sm:px-10 px-4 py-20">
+				<div class="xl:container mx-auto ">
+					<!----hero text---->
+					<div class=" text-center text-gray-400 uppercase">
+						<h1 class=" text-5xl md:text-8xl font-thin ">CONTACT</h1>
+						<p class="text-xl tracking-wide font-light mt-4">RENEWABLE ENERGY PROJECTS THAT WE LOVE.</p>
+					</div>
+					<!----map---->
+					<div class=" p-2 border w-full border-gray-300 mt-10">
+						<iframe class="w-full h-72" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d5249.888864420695!2d2.297516!3d48.85927!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1627661987299!5m2!1sen!2sus"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					</div>
+					<!----grid---->
+					<div class=" grid md:grid-cols-2 grid-cols-1 gap-10 mt-10">
+						<!------>
+						<div class="text-sm text-gray-500">
+							<h5 class=" text-xl font-bold mb-1">Address:</h5>
+							<p class="mb-4">012 Lorem Street, 123rd Floor Warsae, GA 0123456-78</p>
+
+							<ul class=" space-y-2 text-base">
+								<li class=" flex items-center">
+									<span class=" text-green-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4 mr-2" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+									</span>
+									<span>Email: <a class="text-green-300" href="#">sample@mail.com</a></span>
+								</li>
+								<li class=" flex items-center">
+									<span class=" text-green-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4 mr-2" role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"/></svg>
+									</span>
+									<span>Phone: +49 5241 80-0 00</span>
+								</li>
+								<li class=" flex items-center">
+									<span class=" text-green-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4 mr-2" role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/></svg>
+									</span>
+									<span>Mobile: +49 5241 80-0 00</span>
+								</li>
+								<li class=" flex items-center">
+									<span class=" text-green-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4 mr-2" role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+									</span>
+									<span>Facebook: facebook.com/username</span>
+								</li>
+								<li class=" flex items-center">
+									<span class=" text-green-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4 mr-1" role="img" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+									</span>
+									<span>Twitter: twitter.com/username</span>
+								</li>
+							</ul>
+
+							<h5 class=" mt-4 mb-1 text-xl font-bold">Other Information</h5>
+							<p class=" md:pr-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis illum voluptatibus accusamus blanditiis voluptatum iusto et ratione dolore quos rem quibusdam odio sint unde, aperiam dolorem !</p>
+						</div>
+						<div>
+							<img class=" w-full h-full" src="images/contact.jpg" alt="//">
+						</div>
+					</div>
+					<!---message---->
+					<form class=" mt-10" action="#">
+						<h3 class="text-gray-500 font-bold text-xl">Contact us by this form:</h3>
+						<div class=" grid lg:grid-cols-2 grid-cols-1 gap-4 mt-2">
+							<!------->
+							<div>
+								<!---name---->
+								<div class="mb-4 relative">
+									<input type="text" class="p-3 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow" id="comment-name" placeholder="Your Name" />
+									<span class=" absolute right-3 top-4 text-gray-400 bg-white">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4" viewBox="0 0 512 512"><path fill="currentColor" d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"/></svg>
+									</span>
+								</div>
+								<!---email---->
+								<div class="mb-4 relative">
+									<input type="email" class="p-3 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow" placeholder="Email" />
+									<span class=" absolute right-3 top-4 text-gray-400 bg-white">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+									</span>
+								</div>
+								<!---phone---->
+								<div class="mb-4 relative">
+									<input type="text" class="p-3 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow" placeholder="Phone number" />
+									<span class=" absolute right-3 top-4 text-gray-400 bg-white">
+										<svg xmlns="http://www.w3.org/2000/svg" class=" h-4 w-4" viewBox="0 0 512 512"><path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"/></svg>
+									</span>
+								</div>
+							</div>
+							<!------->
+							<div class="mb-4 h-full">
+								<!---Subject---->
+								<div class="mb-4 relative">
+									<input type="text" class="p-3 pb-4 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow" placeholder="Subject" />
+								</div>
+								<textarea class="resize-none h-28 p-3 border w-full text-gray-500 focus:outline-none focus:border-blue-500 focus:shadow"  placeholder="Comment"></textarea>
+							</div>
+						</div>
+						<!------submit------->
+						<div class=" mt-4">
+							<button class="focus:outline-none bg-green-400 border-2 border-green-400 hover:text-green-400 text-white p-3 text-xl px-8 font-medium rounded duration-300 hover:bg-transparent font-medium">Send Message</button>
+						</div>
+					</form>
+					<!----grid---->
+					<div class=" grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 md:gap-16 gap-10 mt-32">
+						<!------->
+						<img src="images/partners/partner01.jpg" alt="//">
+						<!------->
+						<img src="images/partners/partner02.jpg" alt="//">
+						<!------->
+						<img src="images/partners/partner03.jpg" alt="//">
+						<!------->
+						<img src="images/partners/partner04.jpg" alt="//">
+					</div>
+				</div>
+			</section>
+			<!-----=====CONTACT 005=======----->
+			<section class=" xl:px-28 lg:px-24 md:px-20 sm:px-10 px-4 py-20">
+				<div class="xl:container mx-auto ">
+					<!----hero text---->
+					<div class=" text-center text-gray-400 uppercase">
+						<h1 class=" text-5xl md:text-8xl font-thin ">CONTACT</h1>
+						<p class="text-xl tracking-wide font-light mt-4">RENEWABLE ENERGY PROJECTS THAT WE LOVE.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- ==Footer Section == -->
+		<footer>
+			<div class=" py-7  bg-gray-900 text-gray-300">
+				<div class=" lg:container  xl:px-28 lg:px-24 md:px-20 sm:px-10 px-4 mx-auto md:flex md:justify-between justify-center md:text-left text-center">
+					<p class="copy">Copyright 2016 &copy; Powered By MustacheThemes.</p>
+					<p class="address">The Best Nonprofit Bootstrap Theme</p>
+				</div>
+			</div>
+		</footer>
+
+		<!--  Alpine Js -->
+		<script src="js/alpine.min.js"></script>
+	</body>
+</html>
+
+
+
+
+
+
+
