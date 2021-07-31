@@ -9,45 +9,16 @@
 		<link rel="icon" href="images/logo.png">
 		<!----------->
 		<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet">
-	
+		<!-------->
+		<!-- glide Required Core Stylesheet -->
+		<link rel="stylesheet" href="css/glide.core.min.css">
+		<!-- glide Optional Theme Stylesheet -->
+		<link rel="stylesheet" href="css/glide.theme.min.css">
+
 		<!-- Tailwind-Css -->
 		<link rel="stylesheet" href="css/tailwind.min.css">
-		<style>
-			body{
-				font-family: 'Lato';
-			}
-			.max-w-container{
-				width: 1170px;
-			}
-			.bg-gray-transparent{
-				background-color: rgba(0,0,0,0.7);
-			}
-			@media (min-width: 1280px){
-				.container{
-				width: 1280px !important;
-				}
-			}
-			header ul li{
-				position: relative;
-			}
-			header ul li a:after{
-				content: "";
-				height: 2px;
-				width: 0px;
-				left: 0;
-				bottom: -2px;
-				position: absolute;
-				background: white;
-				transition-duration: .4s;
-			}
-			header ul li a:hover::after,header ul li a:focus::after,header ul li a:active::after,header .active::after{
-				width: 100% !important;
-			}
-			/*--------Slider------*/
-			.flickity-viewport {
-			height: 500px !important;
-			}
-		</style>
+		<!--Css -->
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body x-data="{sticky: true}">
 		<!-- ==Header Section == -->
@@ -244,8 +215,32 @@
 								<!-------->
 								<div class=" text-sm leading-loose text-gray-500  mt-10">
 									<!------>
-									<div class="relative">
-										<img src="images/news/main.jpg" alt="//">
+									<!----slider----->
+									<div id="glide2" class="glide text-white">
+										<div class="glide__track" data-glide-el="track">
+										<ul class="glide__slides">
+											<!-------->
+											<li class="glide__slide">
+												<!----content---->
+												<img class="w-full" src="images/news/main.jpg" alt="">
+											</li>
+											<!-------->
+											<li class="glide__slide">
+												<!----content---->
+												<img class="w-full" src="images/news/main02.jpg" alt="">
+											</li>
+											<!-------->
+											<li class="glide__slide">
+												<!----content---->
+												<img class="w-full" src="images/news/main03.jpg" alt="">
+											</li>
+										</ul>
+										</div>
+										<div class="glide__bullets" data-glide-el="controls[nav]">
+											<button class="glide__bullet" data-glide-dir="=0"></button>
+											<button class="glide__bullet" data-glide-dir="=1"></button>
+											<button class="glide__bullet" data-glide-dir="=2"></button>
+										</div>
 									</div>
 									<!------>
 									<h2 class=" text-2xl text-gray-500 my-2">Slideshow Image Post</h2>
@@ -541,6 +536,18 @@
 
 		<!--  Alpine Js -->
 		<script src="js/alpine.min.js"></script>
+		<!--  glide -->
+		<script src="js/glide.min.js"></script>
+		<script>
+			var glide = new Glide('#glide2', {
+			type: 'carousel',
+			perView: 1,
+			focusAt: 'center',
+			autoplay:4000,
+			})
+
+			glide.mount()
+		</script>
 	</body>
 </html>
 
